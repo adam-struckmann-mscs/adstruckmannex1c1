@@ -21,6 +21,9 @@ Public Class frmMain
         lblTotalSales.Text = String.Empty
         'send the focus to the Doughnuts box
         txtDonuts.Focus()
+    End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
 
     End Sub
 
