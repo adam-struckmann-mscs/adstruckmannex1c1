@@ -23,4 +23,8 @@ Public Class frmMain
     Private Sub btnexit_click(sender As Object, e As EventArgs) Handles btnexit.Click
         Me.Close()
     End Sub
+
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

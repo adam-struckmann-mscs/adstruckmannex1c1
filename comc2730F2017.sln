@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "adstruckmann1d1", "adstruck
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "adstruckmann1f1", "adstruckmann1f1\adstruckmann1f1.vbproj", "{44C7AD92-752F-4969-88FD-7D577A520C03}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "adstruckmann1g1", "adstruckmann1g1\adstruckmann1g1.vbproj", "{3464F1D8-90C4-4B0D-BEC5-0CC6B818B82F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{44C7AD92-752F-4969-88FD-7D577A520C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44C7AD92-752F-4969-88FD-7D577A520C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44C7AD92-752F-4969-88FD-7D577A520C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3464F1D8-90C4-4B0D-BEC5-0CC6B818B82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3464F1D8-90C4-4B0D-BEC5-0CC6B818B82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3464F1D8-90C4-4B0D-BEC5-0CC6B818B82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3464F1D8-90C4-4B0D-BEC5-0CC6B818B82F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
