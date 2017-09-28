@@ -18,8 +18,8 @@ Public Class Retirement_Form
         Decimal.TryParse(txtemp1.Text, decemp1)
         Decimal.TryParse(txtemp2.Text, decemp2)
 
-        decannual1 = (intgross * decemp1) * 52
-        decannual2 = (intgross * decemp2) * 52
+        decannual1 = (intgross * 52) * decemp1
+        decannual2 = (intgross * 52) * decemp2
         decannualcont = decannual1 + decannual2
 
 
