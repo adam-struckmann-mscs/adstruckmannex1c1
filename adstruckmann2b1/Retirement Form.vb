@@ -7,8 +7,8 @@ Option Infer Off
 Public Class Retirement_Form
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btncalc.Click
 
-        Const decemp1 As Decimal = 0.05
-        Const decemp2 As Decimal = 0.07
+        Dim decemp1 As Decimal
+        Dim decemp2 As Decimal
         Dim intgross As Integer
         Dim decannual1 As Decimal
         Dim decannual2 As Decimal
