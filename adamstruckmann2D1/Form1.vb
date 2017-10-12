@@ -125,13 +125,13 @@ Public Class Form1
         Integer.TryParse(txtcurrent.Text, intcurrent)
         Decimal.TryParse(lblmonthlybill2.Text, decmonthlybill)
 
-        decmonthlybill = (intcurrent - intprevious) * electric_rate
 
-        lblmonthlybill2.Text = decmonthlybill.ToString("C2")
-
-        If txtprevious.Text < txtcurrent.Text Then
+        If intprevious > intcurrent Then
             MessageBox.Show("The current reading must be greater than or equal to the previous reading.", "Tri County",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            decmonthlybill = (intcurrent - intprevious) * electric_rate
+            lblmonthlybill2.Text = decmonthlybill.ToString("C2")
         End If
     End Sub
 
@@ -143,7 +143,7 @@ Public Class Form1
 
         Integer.TryParse(txtfirst.Text, intfirst)
         Integer.TryParse(txtsecond.Text, intsecond)
-        Integer.TryParse(lblquot.Text, intquot)
+        'Integer.TryParse(lblquot.Text, intquot)
 
         intquot = intfirst / intsecond
 
@@ -157,7 +157,8 @@ Public Class Form1
             intsecond = intTemp
         End If
         'display lowest and highest
-        lblmessage.text = "lowest score: " &
+        'lblmessage.text = "lowest score: " &
+        lblquot.Text = "lowest score: " &
             Convert.ToString(intfirst) & ControlChars.NewLine &
             "highest score: " & Convert.ToString(intsecond)
 

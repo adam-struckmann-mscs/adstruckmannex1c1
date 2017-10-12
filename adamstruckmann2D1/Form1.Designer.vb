@@ -281,7 +281,7 @@ Partial Class Form1
         Me.lblquot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblquot.Location = New System.Drawing.Point(340, 412)
         Me.lblquot.Name = "lblquot"
-        Me.lblquot.Size = New System.Drawing.Size(100, 23)
+        Me.lblquot.Size = New System.Drawing.Size(100, 54)
         Me.lblquot.TabIndex = 31
         Me.lblquot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
