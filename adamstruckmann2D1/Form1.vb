@@ -1,6 +1,6 @@
 ﻿' Adam Struckmann on 10/11/2017
 
-
+Option Strict On
 Option Explicit On
 Option Infer Off
 
@@ -21,9 +21,9 @@ Public Class Form1
         lblrand2.Text = String.Empty
 
         Double.TryParse(txtdollar.Text, dbldollar)
-        Double.TryParse(lbleuro2.Text, dbleuro)
-        Double.TryParse(lblpound2.Text, dblpound)
-        Double.TryParse(lblrand2.Text, dblrand)
+        'Double.TryParse(lbleuro2.Text, dbleuro)
+        'Double.TryParse(lblpound2.Text, dblpound)
+        'Double.TryParse(lblrand2.Text, dblrand)
 
         dbleuro = dbleuro_rate * dbldollar
         dblpound = dblpound_rate * dbldollar
@@ -33,50 +33,43 @@ Public Class Form1
         lblpound2.Text = dblpound.ToString("C2")
         lblrand2.Text = dblrand.ToString("C2")
 
-        If txtdollar.Text = String.Empty Then
+        If dbldollar = 0 Then
             MessageBox.Show("Please enter the number of American dollars.",
                             "Currency Converter", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            Double.TryParse(txtdollar.Text, dbldollar)
+            dbleuro = dbleuro_rate * dbldollar
+            dblpound = dblpound_rate * dbldollar
+            dblrand = dblrand_rate * dbldollar
+
+            lbleuro2.Text = dbleuro.ToString("C2")
+            lblpound2.Text = dblpound.ToString("C2")
+            lblrand2.Text = dblrand.ToString("C2")
 
         End If
     End Sub
 
     Private Sub btnteacalc_Click(sender As Object, e As EventArgs) Handles btnteacalc.Click
 
-        MessageBox.Show("Charge for Shipping?", "Shipping",
+        Dim diagresult As DialogResult
+        diagresult = MessageBox.Show("Charge for Shipping?", "Shipping",
           MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If DialogResult = DialogResult.Yes Then
-            Const shipping_rate As Decimal = 15
-            Dim intpounds As Integer
-            Dim intprice As Integer
-            Dim dectotaldue As Decimal
 
-            Decimal.TryParse(lblteatotal2.Text, dectotaldue)
-            Integer.TryParse(txtteapounds.Text, intpounds)
-            Integer.TryParse(txtteaprice.Text, intprice)
+        Dim shipping_rate As Decimal = 0
+        Dim intpounds As Integer
+        Dim intprice As Integer
+        Dim dectotaldue As Decimal
 
-            dectotaldue = (intpounds * intprice + shipping_rate)
-
-            lblteatotal2.Text = dectotaldue.ToString("C2")
-
-        Else 'no button
-
-            Dim intpounds As Integer
-            Dim intprice As Integer
-            Dim dectotaldue As Decimal
-
-            Decimal.TryParse(lblteatotal2.Text, dectotaldue)
-            Integer.TryParse(txtteapounds.Text, intpounds)
-            Integer.TryParse(txtteaprice.Text, intprice)
-
-            dectotaldue = intpounds * intprice
-
-            lblteatotal2.Text = dectotaldue.ToString("C2")
+        'Decimal.TryParse(lblteatotal2.Text, dectotaldue)
+        Integer.TryParse(txtteapounds.Text, intpounds)
+        Integer.TryParse(txtteaprice.Text, intprice)
 
 
+        If diagresult = DialogResult.Yes Then
+            shipping_rate = 15
         End If
 
+        dectotaldue = (intpounds * intprice + shipping_rate)
+        lblteatotal2.Text = dectotaldue.ToString("C2")
 
     End Sub
 
@@ -94,9 +87,9 @@ Public Class Form1
         lblrand2.Text = String.Empty
 
         Double.TryParse(txtdollar.Text, dbldollar)
-        Double.TryParse(lbleuro2.Text, dbleuro)
-        Double.TryParse(lblpound2.Text, dblpound)
-        Double.TryParse(lblrand2.Text, dblrand)
+        'Double.TryParse(lbleuro2.Text, dbleuro)
+        'Double.TryParse(lblpound2.Text, dblpound)
+        'Double.TryParse(lblrand2.Text, dblrand)
 
         dbleuro = dbleuro_rate * dbldollar
         dblpound = dblpound_rate * dbldollar
@@ -106,11 +99,17 @@ Public Class Form1
         lblpound2.Text = dblpound.ToString("C2")
         lblrand2.Text = dblrand.ToString("C2")
 
-        If txtdollar.Text = String.Empty Then
+        If dbldollar = 0 Then
             MessageBox.Show("Please enter the number of American dollars.",
                             "Currency Converter", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            Double.TryParse(txtdollar.Text, dbldollar)
+            dbleuro = dbleuro_rate * dbldollar
+            dblpound = dblpound_rate * dbldollar
+            dblrand = dblrand_rate * dbldollar
+
+            lbleuro2.Text = dbleuro.ToString("C2")
+            lblpound2.Text = dblpound.ToString("C2")
+            lblrand2.Text = dblrand.ToString("C2")
 
         End If
     End Sub
