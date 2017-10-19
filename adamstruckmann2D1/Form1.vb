@@ -116,7 +116,7 @@ Public Class Form1
 
     Private Sub btncalc3_Click(sender As Object, e As EventArgs) Handles btncalc3.Click
 
-        Const electric_rate As Decimal = 0.13
+        Const electric_rate As Decimal = 0.13@
         Dim intprevious As Integer
         Dim intcurrent As Integer
         Dim decmonthlybill As Decimal
@@ -139,15 +139,15 @@ Public Class Form1
 
         Dim intfirst As Integer
         Dim intsecond As Integer
-        Dim intquot As Integer
+        Dim dblquot As Double
 
         Integer.TryParse(txtfirst.Text, intfirst)
         Integer.TryParse(txtsecond.Text, intsecond)
         'Integer.TryParse(lblquot.Text, intquot)
 
-        intquot = intfirst / intsecond
+        dblquot = intfirst / intsecond
 
-        lblquot.Text = intquot.ToString()
+        lblquot.Text = dblquot.ToString()
 
 
         If intfirst > intsecond Then
