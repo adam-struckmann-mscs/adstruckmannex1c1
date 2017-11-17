@@ -25,7 +25,7 @@ Public Class Form1
 
         '04 substring
         Dim stritem As String = txt04.Text
-        Dim strcolor As String = stritem.Substring(2, 4)
+        Dim strcolor As String = stritem.Substring(2, 1)
         lbl04.Text = strcolor
 
         '05c insert
