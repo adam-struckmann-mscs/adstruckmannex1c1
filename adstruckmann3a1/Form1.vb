@@ -139,11 +139,12 @@
         Dim intsum As Integer
         Dim intcount As Integer
         Dim dblavg As Double
-
+        Dim intlastval As Integer
 
         strnum = InputBox(strPROMPT, strTITLE, "0")
+        Int32.TryParse(strnum, intlastval)
         'LOOP
-        For 
+        For intcount = 1 To intlastval
             Int32.TryParse(strnum, intnum)
 
             txtlist.Text = txtlist.Text & intnum.ToString & ControlChars.NewLine
@@ -152,7 +153,7 @@
             intsum = intsum + intnum
             strnum = InputBox(strPROMPT, strTITLE, "0")
 
-        Next strnum = String.Empty
+        Next
 
         lblcount.Text = intcount.ToString
 
