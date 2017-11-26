@@ -65,22 +65,19 @@ Public Class frmMain
 
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        lstprices.Items.Add("1.00")
-        lstprices.Items.Add("2.00")
-        lstprices.Items.Add("3.00")
-        lstprices.Items.Add("4.00")
+        lstprices.Items.Add(1 - 4)
 
         Dim dblpretaxtotal As Double = 0.00
         Dim dblselectedprice As Double
         Dim dbltax As Double
         Dim dbltotal As Double
+        Dim strselecteditem As String
 
         For index As Integer = 0 To lstprices.Items.Count - 1
             index = lstprices.SelectedIndex
-            Dim strSelectedItem As String = lstprices.SelectedItem.ToString
-            Double.TryParse(lstprices.SelectedItem.ToString, dblselectedprice)
-            dblpretaxtotal = dblpretaxtotal + dblselectedprice
+            strSelectedItem = lstprices.SelectedItem.ToString
+            Double.TryParse(strSelectedItem, dblselectedprice)
+            dblpretaxtotal += dblselectedprice
 
         Next
 
