@@ -63,9 +63,6 @@ Public Class frmMain
         lstmulttable.Text = String.Empty
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -74,18 +71,30 @@ Public Class frmMain
         lstprices.Items.Add("3.00")
         lstprices.Items.Add("4.00")
 
-
-
-        Dim dblpretaxtotal As Double = 0
+        Dim dblpretaxtotal As Double = 0.00
         Dim dblselectedprice As Double
+        Dim dbltax As Double
+        Dim dbltotal As Double
 
-        For index As Integer 0 To lstprices.Items.Count - 1
+        For index As Integer = 0 To lstprices.Items.Count - 1
             index = lstprices.SelectedIndex
             Dim strSelectedItem As String = lstprices.SelectedItem.ToString
             Double.TryParse(lstprices.SelectedItem.ToString, dblselectedprice)
             dblpretaxtotal = dblpretaxtotal + dblselectedprice
+
         Next
-        lstprices.Items.Add(dblpretaxtotal.ToString)
+
+        lblpretax.Text = dblpretaxtotal.ToString("N2")
+        dbltax = dblpretaxtotal * dblTAXRATE
+        lbltax.Text = dbltax.ToString("N2")
+        dbltotal = dblpretaxtotal + dbltax
+        lbltotal.Text = dbltotal.ToString("N2")
+
+
+    End Sub
+
+    Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
+
 
 
     End Sub
