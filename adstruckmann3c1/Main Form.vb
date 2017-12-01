@@ -95,7 +95,7 @@ Public Class frmMain
     Private Sub CalculateRadSub(ByVal dblWeight As Double, ByRef dbltotal As Double)
         Dim dblgravity As Double
         Double.TryParse(txtweight.Text, dblWeight)
-        Select Case cboplanet.SelectedIndex.ToString
+        Select Case cboplanet.Text
             Case "Mercury", "Mars"
                 dblgravity = 0.38
             Case "Venus"
@@ -118,7 +118,7 @@ Public Class frmMain
     Private Function CalculateRadFunc(ByVal dblweight As Double, ByVal dbltotal As Double) As Double
         Dim dblgravity As Double
         Double.TryParse(txtweight.Text, dblweight)
-        Select Case cboplanet.SelectedIndex.ToString
+        Select Case cboplanet.Text
             Case "Mercury", "Mars"
                 dblgravity = 0.38
             Case "Venus"
@@ -140,14 +140,14 @@ Public Class frmMain
         Return dbltotal
     End Function
 
-    Private Sub WeightInputChanged(sender As Object, e As EventArgs) Handles radsub.CheckedChanged, radfunc.CheckedChanged
+    Private Sub WeightInputChanged(sender As Object, e As EventArgs) Handles radsub.CheckedChanged, radfunc.CheckedChanged, cboplanet.SelectedIndexChanged, txtweight.TextChanged
         Dim dbltotal As Double
         Dim dblweight As Double
 
         If radsub.Checked Then
             CalculateRadSub(dblweight, dbltotal)
         ElseIf radfunc.Checked Then
-            CalculateRadFunc(dblweight, dbltotal)
+            dbltotal = CalculateRadFunc(dblweight, dbltotal)
         End If
         lbltotal.Text = dbltotal.ToString("N2")
     End Sub
