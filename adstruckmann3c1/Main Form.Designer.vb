@@ -193,12 +193,10 @@ Partial Public Class frmMain
         'radsub
         '
         Me.radsub.AutoSize = True
-        Me.radsub.Checked = True
         Me.radsub.Location = New System.Drawing.Point(25, 118)
         Me.radsub.Name = "radsub"
         Me.radsub.Size = New System.Drawing.Size(52, 24)
         Me.radsub.TabIndex = 4
-        Me.radsub.TabStop = True
         Me.radsub.Text = "Sub"
         Me.radsub.UseVisualStyleBackColor = True
         '
